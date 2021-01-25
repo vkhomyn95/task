@@ -1,0 +1,23 @@
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>Екзаменаційна задача</title>
+</head>
+
+<body>
+<div ng-controller='yogurtController as yogurtctrl'>
+  <h2>Каталог йогуртів:</h2>
+  <ol>
+    <li ng-repeat="yogurt in yogurtctrl.yogurts" ng-hide="yogurt.isHide">
+      Наявно {{yogurt.quantity}} ящиків йогурту марки << {{yogurt.mark}}>>
+      <button ng-click="yogurtctrl.hide($index)">Приховати</button>
+      <button ng-click="yogurtctrl.remove($index)">Видалити</button>
+    </li>
+  </ol>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
